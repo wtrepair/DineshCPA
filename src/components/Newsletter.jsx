@@ -21,14 +21,12 @@ const Newsletter = ({ className = "" }) => {
           <div className="self-stretch flex flex-row items-start justify-start max-w-full [row-gap:20px] mq825:flex-wrap">
             <InputField
               labelText="First name"
-              user="/mail.svg"
-              placeholderText="Enter your email"
-              x="/x.svg"
               showHelperText={false}
               showRightIcon={false}
               showLabel={false}
               showPlaceholder
               showLeftIcon
+              placeholderText="Enter your email"
               propMinWidth="230px"
               propBackgroundColor="#fff"
               propBorder="unset"
@@ -36,13 +34,13 @@ const Newsletter = ({ className = "" }) => {
               propBorderBottom="1px solid #d1d5db"
               propBorderLeft="1px solid #d1d5db"
               propOverflow="hidden"
+              user1="/mail.svg"
+              x="pending_I32:4922;92:131096;45:127906"
             />
             <Button
-              cartPlus="/cartplus.svg"
-              buttonText="Subscribe"
-              cartPlus1="/cartplus.svg"
               showRightIcon={false}
               showLeftIcon={false}
+              buttonText="Subscribe"
               showButtonText
               propBackgroundColor="#057a55"
               propPadding="14px 23px"
@@ -51,9 +49,11 @@ const Newsletter = ({ className = "" }) => {
               propWidth="unset"
               propBorderRadius="0px 8px 8px 0px"
               propHeight="unset"
+              cartPlus="pending_I32:4922;92:131097;26:141394"
               propTextTransform="unset"
               propColor="#fff"
               propAlignSelf="unset"
+              cartPlus1="pending_I32:4922;92:131097;26:141344"
             />
           </div>
           <div className="self-stretch relative">

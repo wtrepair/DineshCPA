@@ -2,16 +2,16 @@ import PropTypes from "prop-types";
 
 const Textarea = ({
   className = "",
-  labelText = "Your message",
   placeholderText = "Write text here ...",
-  helperText = "A note for extra info",
   showHelper = false,
+  labelText = "Your message",
   showPlaceholder = false,
+  helperText = "A note for extra info",
   showLabel = true,
 }) => {
   return (
     <div
-      className={`self-stretch flex flex-col items-center justify-start gap-boundvariablesdata4 max-w-full text-left text-sm text-gray-500 font-leading-none-text-sm-font-medium ${className}`}
+      className={`self-stretch flex flex-col items-center justify-start gap-boundvariablesdata5 max-w-full text-left text-sm text-gray-500 font-leading-none-text-sm-font-medium ${className}`}
     >
       {showLabel && (
         <div className="self-stretch relative leading-[150%] font-medium text-gray-900">
@@ -38,11 +38,11 @@ const Textarea = ({
 
 Textarea.propTypes = {
   className: PropTypes.string,
-  labelText: PropTypes.string,
   placeholderText: PropTypes.string,
-  helperText: PropTypes.string,
   showHelper: PropTypes.bool,
+  labelText: PropTypes.string,
   showPlaceholder: PropTypes.bool,
+  helperText: PropTypes.string,
   showLabel: PropTypes.bool,
 };
 

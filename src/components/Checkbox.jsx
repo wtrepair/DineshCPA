@@ -8,7 +8,7 @@ const Checkbox = ({
 }) => {
   return (
     <div
-      className={`rounded flex flex-row items-center justify-start gap-boundvariablesdata4 max-w-full text-left text-xs text-gray-500 font-leading-none-text-sm-font-medium ${className}`}
+      className={`rounded flex flex-row items-center justify-start gap-boundvariablesdata5 max-w-full text-left text-xs text-gray-500 font-leading-none-text-sm-font-medium ${className}`}
     >
       <div className="h-[16.5px] w-[16.5px] rounded bg-gray-50 border-gray-300 border-[0.5px] border-solid box-border" />
       {showLabel && (

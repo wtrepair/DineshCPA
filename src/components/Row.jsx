@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 
 const Row = ({
   className = "",
+  propPadding,
   heading,
   supportingText,
+  propPadding1,
   arrowNarrowRight1,
   arrowNarrowRight2,
   collageFinanceBannerConcept,
-  propPadding,
-  propPadding1,
   cartPlus,
   buttonText,
   cartPlus1,
@@ -59,11 +59,9 @@ const Row = ({
           style={buttonsStyle}
         >
           <Button
-            cartPlus={cartPlus}
-            buttonText={buttonText}
-            cartPlus1={cartPlus1}
             showRightIcon={showRightIcon}
             showLeftIcon={showLeftIcon}
+            buttonText={buttonText}
             showButtonText={showButtonText}
             propBackgroundColor={propBackgroundColor}
             propPadding={propPadding2}
@@ -72,11 +70,13 @@ const Row = ({
             propWidth={propWidth}
             propBorderRadius={propBorderRadius}
             propHeight={propHeight}
+            cartPlus={cartPlus}
             propTextTransform={propTextTransform}
             propColor={propColor}
             propAlignSelf={propAlignSelf}
+            cartPlus1={cartPlus1}
           />
-          <div className="self-stretch rounded-rounded-lg1 bg-white border-gray-200 border-[1px] border-solid hidden flex-row items-center justify-center py-boundvariablesdata22 px-[19px] gap-boundvariablesdata20">
+          <div className="self-stretch rounded-rounded-lg1 bg-white border-gray-200 border-[1px] border-solid hidden flex-row items-center justify-center py-boundvariablesdata21 px-[19px] gap-boundvariablesdata20">
             <img
               className="h-3.5 w-3.5 relative overflow-hidden shrink-0 hidden"
               alt=""

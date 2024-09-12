@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import PropTypes from "prop-types";
 
-const Card = ({ className = "", title, description, propBorderRadius }) => {
+const Card = ({ className = "", propBorderRadius, title, description }) => {
   const rectangleDivStyle = useMemo(() => {
     return {
       borderRadius: propBorderRadius,

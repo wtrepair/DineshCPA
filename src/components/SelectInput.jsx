@@ -3,25 +3,23 @@ import PropTypes from "prop-types";
 const SelectInput = ({
   className = "",
   labelText = "Select language",
-  info,
-  placeholderText = "English (US)",
-  chevronDown,
   showLabel = true,
   showLabelIcon = true,
+  placeholderText = "English (US)",
   showPlaceholder = true,
 }) => {
   return (
     <div
-      className={`flex-1 flex flex-col items-start justify-start gap-boundvariablesdata4 min-w-[239px] max-w-full text-left text-sm text-gray-900 font-leading-none-text-sm-font-medium ${className}`}
+      className={`flex-1 flex flex-col items-start justify-start gap-boundvariablesdata5 min-w-[239px] max-w-full text-left text-sm text-gray-900 font-leading-none-text-sm-font-medium ${className}`}
     >
       {showLabel && (
-        <div className="self-stretch flex flex-row items-center justify-start py-0 pl-0 pr-[239px] gap-boundvariablesdata4 mq450:pr-5 mq450:box-border">
+        <div className="self-stretch flex flex-row items-center justify-start py-0 pl-0 pr-[239px] gap-boundvariablesdata5 mq450:pr-5 mq450:box-border">
           <div className="relative leading-[150%] font-medium">{labelText}</div>
           {showLabelIcon && (
             <img
               className="h-boundvariablesdata w-boundvariablesdata relative overflow-hidden shrink-0"
               alt=""
-              src={info}
+              src="/info.svg"
             />
           )}
         </div>
@@ -36,7 +34,7 @@ const SelectInput = ({
           <img
             className="h-boundvariablesdata6 w-boundvariablesdata6 relative overflow-hidden shrink-0"
             alt=""
-            src={chevronDown}
+            src="/chevrondown.svg"
           />
         </div>
       </div>
@@ -47,11 +45,9 @@ const SelectInput = ({
 SelectInput.propTypes = {
   className: PropTypes.string,
   labelText: PropTypes.string,
-  info: PropTypes.string,
-  placeholderText: PropTypes.string,
-  chevronDown: PropTypes.string,
   showLabel: PropTypes.bool,
   showLabelIcon: PropTypes.bool,
+  placeholderText: PropTypes.string,
   showPlaceholder: PropTypes.bool,
 };
 

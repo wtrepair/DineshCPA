@@ -20,11 +20,9 @@ const Hero = ({ className = "" }) => {
           </div>
           <div className="hidden flex-row items-start justify-start gap-boundvariablesdata2 max-w-full mq450:flex-wrap">
             <Button
-              cartPlus="/arrowright.svg"
-              buttonText="Learn more"
-              cartPlus1="/arrowrightoutline-6.svg"
               showRightIcon
               showLeftIcon={false}
+              buttonText="Learn more"
               showButtonText
               propBackgroundColor="#1a56db"
               propPadding="14px 24px"
@@ -33,16 +31,16 @@ const Hero = ({ className = "" }) => {
               propWidth="unset"
               propBorderRadius="8px"
               propHeight="52px"
+              cartPlus="pending_I34:689;3368:20321;26:141394"
               propTextTransform="unset"
               propColor="#fff"
               propAlignSelf="stretch"
+              cartPlus1="pending_I34:689;3368:20321;26:141344"
             />
             <Button
-              cartPlus="/videocamera-1.svg"
-              buttonText="Watch video"
-              cartPlus1="/cartplus.svg"
               showRightIcon={false}
               showLeftIcon
+              buttonText="Watch video"
               showButtonText
               propBackgroundColor="#fff"
               propPadding="14px 23px"
@@ -51,9 +49,11 @@ const Hero = ({ className = "" }) => {
               propWidth="unset"
               propBorderRadius="8px"
               propHeight="52px"
+              cartPlus="pending_I34:689;3368:20322;29:127794"
               propTextTransform="unset"
               propColor="#111928"
               propAlignSelf="stretch"
+              cartPlus1="pending_I34:689;3368:20322;29:127796"
             />
           </div>
         </div>

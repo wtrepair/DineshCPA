@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 const ButtonWhitelDefaultTrueFa = ({
   className = "",
-  buttonText = "Learn more",
   showLeftIcon = false,
+  buttonText = "Learn more",
   showRightIcon = false,
   showButtonText = true,
 }) => {
@@ -17,14 +17,13 @@ const ButtonWhitelDefaultTrueFa = ({
 
   return (
     <div
-      className={`w-[127px] rounded-rounded-lg border-white border-[1px] border-solid box-border flex flex-row items-center justify-center py-2.5 px-[18px] gap-boundvariablesdata4 cursor-pointer text-left text-base text-white font-leading-none-text-sm-font-medium ${className}`}
+      className={`w-[127px] rounded-rounded-lg border-white border-[1px] border-solid box-border flex flex-row items-center justify-center py-2.5 px-[18px] gap-boundvariablesdata5 cursor-pointer text-left text-base text-white font-leading-none-text-sm-font-medium ${className}`}
       onClick={onButtonWhitelDefaultTrueFaContainerClick}
     >
       {showLeftIcon && (
         <img
           className="h-boundvariablesdata2 w-boundvariablesdata2 relative overflow-hidden shrink-0"
           alt=""
-          src="/cartplus.svg"
         />
       )}
       {showButtonText && (
@@ -36,7 +35,6 @@ const ButtonWhitelDefaultTrueFa = ({
         <img
           className="h-boundvariablesdata2 w-boundvariablesdata2 relative overflow-hidden shrink-0"
           alt=""
-          src="/cartplus.svg"
         />
       )}
     </div>
@@ -45,8 +43,8 @@ const ButtonWhitelDefaultTrueFa = ({
 
 ButtonWhitelDefaultTrueFa.propTypes = {
   className: PropTypes.string,
-  buttonText: PropTypes.string,
   showLeftIcon: PropTypes.bool,
+  buttonText: PropTypes.string,
   showRightIcon: PropTypes.bool,
   showButtonText: PropTypes.bool,
 };

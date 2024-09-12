@@ -39,13 +39,13 @@ const Testimonials = ({ className = "" }) => {
           </div>
           <div className="self-stretch flex flex-row items-start justify-between py-0 px-[576px] gap-boundvariablesdata9 mq450:pl-5 mq450:pr-5 mq450:box-border mq825:pl-36 mq825:pr-36 mq825:box-border mq1425:pl-72 mq1425:pr-72 mq1425:box-border">
             <img
-              className="h-boundvariablesdata5 w-boundvariablesdata5 relative overflow-hidden shrink-0 min-h-[20px]"
+              className="h-boundvariablesdata4 w-boundvariablesdata4 relative overflow-hidden shrink-0 min-h-[20px]"
               loading="lazy"
               alt=""
               src="/arrowleftoutline.svg"
             />
             <img
-              className="h-boundvariablesdata5 w-boundvariablesdata5 relative overflow-hidden shrink-0 min-h-[20px]"
+              className="h-boundvariablesdata4 w-boundvariablesdata4 relative overflow-hidden shrink-0 min-h-[20px]"
               alt=""
               src="/arrowrightoutline-7.svg"
             />

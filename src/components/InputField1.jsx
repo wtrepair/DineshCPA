@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 const InputField1 = ({
   className = "",
   labelText = "First name",
-  placeholderText = "Search",
   showHelperText = false,
   showRightIcon = false,
   showLabel = false,
   showPlaceholder = true,
   showLeftIcon = true,
+  placeholderText = "Search",
 }) => {
   return (
     <div
@@ -37,7 +37,6 @@ const InputField1 = ({
             <img
               className="h-boundvariablesdata25 w-boundvariablesdata25 relative overflow-hidden shrink-0"
               alt=""
-              src="/x.svg"
             />
           )}
         </div>
@@ -55,12 +54,12 @@ const InputField1 = ({
 InputField1.propTypes = {
   className: PropTypes.string,
   labelText: PropTypes.string,
-  placeholderText: PropTypes.string,
   showHelperText: PropTypes.bool,
   showRightIcon: PropTypes.bool,
   showLabel: PropTypes.bool,
   showPlaceholder: PropTypes.bool,
   showLeftIcon: PropTypes.bool,
+  placeholderText: PropTypes.string,
 };
 
 export default InputField1;

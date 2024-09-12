@@ -5,13 +5,13 @@ import PropTypes from "prop-types";
 const Row1 = ({
   className = "",
   mockup,
+  propPadding,
   heading,
+  propHeight,
+  propDisplay,
   supportingText,
   arrowNarrowRight1,
   arrowNarrowRight2,
-  propPadding,
-  propHeight,
-  propDisplay,
   cartPlus,
   buttonText,
   cartPlus1,
@@ -46,14 +46,12 @@ const Row1 = ({
     <div
       className={`self-stretch flex flex-row items-center justify-start py-0 pl-0 pr-[19px] box-border gap-boundvariablesdata17 max-w-full text-left text-17xl text-gray-900 font-leading-none-text-sm-font-medium lg:flex-wrap mq450:gap-boundvariablesdata17 mq825:gap-boundvariablesdata17 ${className}`}
     >
-      <div className="h-[406.8px] w-[540.5px] relative rounded-lg max-w-full flex items-center justify-center">
-        <img
-          className="h-full w-full object-contain absolute left-[0px] top-[10px] [transform:scale(1.059)] lg:flex-1"
-          loading="lazy"
-          alt=""
-          src={mockup}
-        />
-      </div>
+      <img
+        className="h-[406.8px] w-[540.5px] relative rounded-lg object-cover max-w-full lg:flex-1"
+        loading="lazy"
+        alt=""
+        src={mockup}
+      />
       <div
         className="flex-1 flex flex-col items-start justify-start py-5 px-0 box-border gap-boundvariablesdata18 min-w-[416px] max-w-full mq825:min-w-full"
         style={rightContent1Style}
@@ -69,11 +67,9 @@ const Row1 = ({
         </div>
         <div className="flex flex-row items-center justify-start gap-boundvariablesdata19 text-sm">
           <Button
-            cartPlus={cartPlus}
-            buttonText={buttonText}
-            cartPlus1={cartPlus1}
             showRightIcon={showRightIcon}
             showLeftIcon={showLeftIcon}
+            buttonText={buttonText}
             showButtonText={showButtonText}
             propBackgroundColor={propBackgroundColor}
             propPadding={propPadding1}
@@ -82,11 +78,13 @@ const Row1 = ({
             propWidth={propWidth}
             propBorderRadius={propBorderRadius}
             propHeight={propHeight1}
+            cartPlus={cartPlus}
             propTextTransform={propTextTransform}
             propColor={propColor}
             propAlignSelf={propAlignSelf}
+            cartPlus1={cartPlus1}
           />
-          <div className="self-stretch rounded-rounded-lg1 bg-white border-gray-200 border-[1px] border-solid hidden flex-row items-center justify-center py-boundvariablesdata22 px-[19px] gap-boundvariablesdata20">
+          <div className="self-stretch rounded-rounded-lg1 bg-white border-gray-200 border-[1px] border-solid hidden flex-row items-center justify-center py-boundvariablesdata21 px-[19px] gap-boundvariablesdata20">
             <img
               className="h-3.5 w-3.5 relative overflow-hidden shrink-0 hidden"
               alt=""

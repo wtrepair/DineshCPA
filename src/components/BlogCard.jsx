@@ -5,12 +5,11 @@ import PropTypes from "prop-types";
 const BlogCard = ({
   className = "",
   cardHeader,
-  title,
-  preview,
-  avatar,
-  small,
   propPadding,
+  title,
   propHeight,
+  preview,
+  small,
   clock,
   badgeText,
   x,
@@ -47,12 +46,12 @@ const BlogCard = ({
           style={contentStyle}
         >
           <Badge
-            clock={clock}
-            badgeText={badgeText}
-            x={x}
             showText={showText}
+            badgeText={badgeText}
             showIcon={showIcon}
             showCloseIcon={showCloseIcon}
+            clock={clock}
+            x={x}
           />
           <div className="self-stretch flex flex-col items-start justify-start gap-boundvariablesdata6">
             <h2
@@ -69,7 +68,7 @@ const BlogCard = ({
             <img
               className="h-8 w-8 relative rounded-81xl object-cover"
               alt=""
-              src={avatar}
+              src="/avatar@2x.png"
             />
             <div className="flex flex-col items-start justify-start">
               <div className="relative leading-[125%] font-medium">
@@ -91,7 +90,6 @@ BlogCard.propTypes = {
   cardHeader: PropTypes.string,
   title: PropTypes.string,
   preview: PropTypes.string,
-  avatar: PropTypes.string,
   small: PropTypes.string,
   clock: PropTypes.string,
   badgeText: PropTypes.string,

@@ -4,14 +4,12 @@ import PropTypes from "prop-types";
 const InputField = ({
   className = "",
   labelText = "Phone number",
-  user,
-  placeholderText = "+(12) 345 6789",
-  x,
   showHelperText = false,
   showRightIcon = false,
   showLabel = true,
   showPlaceholder = true,
   showLeftIcon = false,
+  placeholderText = "+(12) 345 6789",
   propMinWidth,
   propBackgroundColor,
   propBorder,
@@ -19,6 +17,8 @@ const InputField = ({
   propBorderBottom,
   propBorderLeft,
   propOverflow,
+  user1,
+  x,
 }) => {
   const inputFieldStyle = useMemo(() => {
     return {
@@ -46,7 +46,7 @@ const InputField = ({
 
   return (
     <div
-      className={`flex-1 flex flex-col items-start justify-start gap-boundvariablesdata4 min-w-[239px] max-w-full text-left text-sm text-gray-500 font-leading-none-text-sm-font-medium ${className}`}
+      className={`flex-1 flex flex-col items-start justify-start gap-boundvariablesdata5 min-w-[239px] max-w-full text-left text-sm text-gray-500 font-leading-none-text-sm-font-medium ${className}`}
       style={inputFieldStyle}
     >
       {showLabel && (
@@ -63,7 +63,7 @@ const InputField = ({
             <img
               className="h-boundvariablesdata2 w-boundvariablesdata2 relative overflow-hidden shrink-0"
               alt=""
-              src={user}
+              src={user1}
             />
           )}
           {showPlaceholder && (
@@ -93,14 +93,14 @@ const InputField = ({
 InputField.propTypes = {
   className: PropTypes.string,
   labelText: PropTypes.string,
-  user: PropTypes.string,
-  placeholderText: PropTypes.string,
-  x: PropTypes.string,
   showHelperText: PropTypes.bool,
   showRightIcon: PropTypes.bool,
   showLabel: PropTypes.bool,
   showPlaceholder: PropTypes.bool,
   showLeftIcon: PropTypes.bool,
+  placeholderText: PropTypes.string,
+  user1: PropTypes.string,
+  x: PropTypes.string,
 
   /** Style props */
   propMinWidth: PropTypes.any,

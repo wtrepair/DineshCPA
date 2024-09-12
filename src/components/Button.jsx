@@ -3,11 +3,9 @@ import PropTypes from "prop-types";
 
 const Button = ({
   className = "",
-  cartPlus,
-  buttonText = "Contact us",
-  cartPlus1,
   showRightIcon = false,
   showLeftIcon = false,
+  buttonText = "Contact us",
   showButtonText = true,
   propBackgroundColor,
   propPadding,
@@ -16,9 +14,11 @@ const Button = ({
   propWidth,
   propBorderRadius,
   propHeight,
+  cartPlus,
   propTextTransform,
   propColor,
   propAlignSelf,
+  cartPlus1,
 }) => {
   const buttonStyle = useMemo(() => {
     return {
@@ -50,12 +50,12 @@ const Button = ({
 
   return (
     <div
-      className={`rounded-rounded-lg bg-green-800 overflow-hidden flex flex-row items-center justify-center py-boundvariablesdata6 px-[66px] gap-boundvariablesdata4 text-left text-sm text-white font-leading-none-text-sm-font-medium ${className}`}
+      className={`rounded-rounded-lg bg-green-800 overflow-hidden flex flex-row items-center justify-center py-boundvariablesdata6 px-[66px] gap-boundvariablesdata5 text-left text-sm text-white font-leading-none-text-sm-font-medium ${className}`}
       style={buttonStyle}
     >
       {showLeftIcon && (
         <img
-          className="h-boundvariablesdata7 w-boundvariablesdata7 relative overflow-hidden shrink-0"
+          className="h-boundvariablesdata7 w-boundvariablesdata7 relative overflow-hidden shrink-0 hidden"
           alt=""
           src={cartPlus}
         />
@@ -70,7 +70,7 @@ const Button = ({
       )}
       {showRightIcon && (
         <img
-          className="h-boundvariablesdata7 w-boundvariablesdata7 relative overflow-hidden shrink-0"
+          className="h-boundvariablesdata7 w-boundvariablesdata7 relative overflow-hidden shrink-0 hidden"
           alt=""
           src={cartPlus1}
         />
@@ -81,12 +81,12 @@ const Button = ({
 
 Button.propTypes = {
   className: PropTypes.string,
-  cartPlus: PropTypes.string,
-  buttonText: PropTypes.string,
-  cartPlus1: PropTypes.string,
   showRightIcon: PropTypes.bool,
   showLeftIcon: PropTypes.bool,
+  buttonText: PropTypes.string,
   showButtonText: PropTypes.bool,
+  cartPlus: PropTypes.string,
+  cartPlus1: PropTypes.string,
 
   /** Style props */
   propBackgroundColor: PropTypes.any,

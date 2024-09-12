@@ -2,12 +2,12 @@ import PropTypes from "prop-types";
 
 const Badge = ({
   className = "",
-  clock,
-  badgeText = "Tutorial",
-  x,
   showText = true,
+  badgeText = "Tutorial",
   showIcon = false,
   showCloseIcon = false,
+  clock,
+  x,
 }) => {
   return (
     <div
@@ -25,7 +25,7 @@ const Badge = ({
       )}
       {showCloseIcon && (
         <img
-          className="h-boundvariablesdata4 w-boundvariablesdata4 relative overflow-hidden shrink-0"
+          className="h-boundvariablesdata5 w-boundvariablesdata5 relative overflow-hidden shrink-0"
           alt=""
           src={x}
         />
@@ -36,12 +36,12 @@ const Badge = ({
 
 Badge.propTypes = {
   className: PropTypes.string,
-  clock: PropTypes.string,
-  badgeText: PropTypes.string,
-  x: PropTypes.string,
   showText: PropTypes.bool,
+  badgeText: PropTypes.string,
   showIcon: PropTypes.bool,
   showCloseIcon: PropTypes.bool,
+  clock: PropTypes.string,
+  x: PropTypes.string,
 };
 
 export default Badge;
