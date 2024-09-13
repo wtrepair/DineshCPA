@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import InputField1 from "./components/InputField1";
+import DineshCPA from "./components/DineshCPA";
 
 function App() {
   const action = useNavigationType();
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<InputField1 />} />
+      <Route path="/" element={<DineshCPA />} />
     </Routes>
   );
 }
