@@ -156,7 +156,7 @@ const Footer: FunctionComponent<FooterType> = ({ className = "" }) => {
                 </div>
                 <div className="self-stretch flex flex-row items-center justify-start">
                   <div className="relative leading-[150%]">
-                    Telephone: 416-879-7023
+                    Telephone: 1-855-DINESH-1
                   </div>
                 </div>
               </div>
