@@ -1,7 +1,30 @@
-import { useMemo } from "react";
-import PropTypes from "prop-types";
+import { FunctionComponent, useMemo, type CSSProperties } from "react";
 
-const Button = ({
+export type ButtonType = {
+  className?: string;
+  showRightIcon?: boolean;
+  showLeftIcon?: boolean;
+  buttonText?: string;
+  showButtonText?: boolean;
+  cartPlus?: string;
+  cartPlus1?: string;
+
+  /** Style props */
+  propBackgroundColor?: CSSProperties["backgroundColor"];
+  propPadding?: CSSProperties["padding"];
+  propOverflow?: CSSProperties["overflow"];
+  propBorder?: CSSProperties["border"];
+  propWidth?: CSSProperties["width"];
+  propBorderRadius?: CSSProperties["borderRadius"];
+  propHeight?: CSSProperties["height"];
+  propTextTransform?: CSSProperties["textTransform"];
+  propColor?: CSSProperties["color"];
+  propAlignSelf?: CSSProperties["alignSelf"];
+  buttonFlex?: CSSProperties["flex"];
+  buttonAlignSelf?: CSSProperties["alignSelf"];
+};
+
+const Button: FunctionComponent<ButtonType> = ({
   className = "",
   showRightIcon = false,
   showLeftIcon = false,
@@ -19,8 +42,10 @@ const Button = ({
   propColor,
   propAlignSelf,
   cartPlus1,
+  buttonFlex,
+  buttonAlignSelf,
 }) => {
-  const buttonStyle = useMemo(() => {
+  const button1Style: CSSProperties = useMemo(() => {
     return {
       backgroundColor: propBackgroundColor,
       padding: propPadding,
@@ -29,6 +54,8 @@ const Button = ({
       width: propWidth,
       borderRadius: propBorderRadius,
       height: propHeight,
+      flex: buttonFlex,
+      alignSelf: buttonAlignSelf,
     };
   }, [
     propBackgroundColor,
@@ -38,9 +65,11 @@ const Button = ({
     propWidth,
     propBorderRadius,
     propHeight,
+    buttonFlex,
+    buttonAlignSelf,
   ]);
 
-  const textStyle = useMemo(() => {
+  const text1Style: CSSProperties = useMemo(() => {
     return {
       textTransform: propTextTransform,
       color: propColor,
@@ -50,12 +79,12 @@ const Button = ({
 
   return (
     <div
-      className={`rounded-rounded-lg bg-green-800 overflow-hidden flex flex-row items-center justify-center py-boundvariablesdata6 px-[66px] gap-boundvariablesdata5 text-left text-sm text-white font-leading-none-text-sm-font-medium ${className}`}
-      style={buttonStyle}
+      className={`flex-1 rounded-rounded-lg bg-green-800 overflow-hidden flex flex-row items-center justify-center py-boundvariablesdata1 px-boundvariablesdata6 gap-boundvariablesdata7 text-left text-sm text-white font-text-xl-font-normal ${className}`}
+      style={button1Style}
     >
       {showLeftIcon && (
         <img
-          className="h-boundvariablesdata7 w-boundvariablesdata7 relative overflow-hidden shrink-0 hidden"
+          className="w-boundvariablesdata8 relative h-boundvariablesdata8 overflow-hidden shrink-0"
           alt=""
           src={cartPlus}
         />
@@ -63,42 +92,20 @@ const Button = ({
       {showButtonText && (
         <div
           className="relative leading-[150%] uppercase font-medium"
-          style={textStyle}
+          style={text1Style}
         >
           {buttonText}
         </div>
       )}
       {showRightIcon && (
         <img
-          className="h-boundvariablesdata7 w-boundvariablesdata7 relative overflow-hidden shrink-0 hidden"
+          className="w-boundvariablesdata8 relative h-boundvariablesdata8 overflow-hidden shrink-0"
           alt=""
           src={cartPlus1}
         />
       )}
     </div>
   );
-};
-
-Button.propTypes = {
-  className: PropTypes.string,
-  showRightIcon: PropTypes.bool,
-  showLeftIcon: PropTypes.bool,
-  buttonText: PropTypes.string,
-  showButtonText: PropTypes.bool,
-  cartPlus: PropTypes.string,
-  cartPlus1: PropTypes.string,
-
-  /** Style props */
-  propBackgroundColor: PropTypes.any,
-  propPadding: PropTypes.any,
-  propOverflow: PropTypes.any,
-  propBorder: PropTypes.any,
-  propWidth: PropTypes.any,
-  propBorderRadius: PropTypes.any,
-  propHeight: PropTypes.any,
-  propTextTransform: PropTypes.any,
-  propColor: PropTypes.any,
-  propAlignSelf: PropTypes.any,
 };
 
 export default Button;

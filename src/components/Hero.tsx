@@ -1,24 +1,28 @@
+import { FunctionComponent } from "react";
 import Button from "./Button";
-import PropTypes from "prop-types";
 
-const Hero = ({ className = "" }) => {
+export type HeroType = {
+  className?: string;
+};
+
+const Hero: FunctionComponent<HeroType> = ({ className = "" }) => {
   return (
     <div
-      className={`self-stretch bg-white overflow-hidden flex flex-col items-center justify-start py-boundvariablesdata8 px-20 box-border max-w-full text-center text-41xl text-gray-900 font-leading-none-text-sm-font-medium mq450:pt-boundvariablesdata8 mq450:pb-boundvariablesdata8 mq450:box-border mq825:pl-boundvariablesdata8 mq825:pr-boundvariablesdata8 mq825:box-border ${className}`}
+      className={`absolute top-[4357px] left-[-11px] bg-white w-[1440px] overflow-hidden flex flex-col items-center justify-start py-boundvariablesdata px-0 box-border text-center text-41xl text-gray-900 font-text-xl-font-normal ${className}`}
     >
-      <div className="self-stretch flex flex-col items-center justify-start max-w-full mq450:gap-boundvariablesdata8 mq825:gap-boundvariablesdata8">
-        <div className="self-stretch flex flex-col items-center justify-start gap-boundvariablesdata3 max-w-full mq825:gap-boundvariablesdata3">
-          <div className="self-stretch flex flex-col items-center justify-start gap-boundvariablesdata9 max-w-full">
-            <h1 className="m-0 self-stretch relative text-inherit tracking-[-0.01em] leading-[60px] font-extrabold font-[inherit] mq450:text-17xl mq450:leading-[36px] mq825:text-29xl mq825:leading-[48px]">
+      <div className="w-[1280px] flex flex-col items-center justify-start">
+        <div className="self-stretch flex flex-col items-center justify-start gap-boundvariablesdata9">
+          <div className="self-stretch flex flex-col items-center justify-start gap-boundvariablesdata10">
+            <div className="self-stretch relative tracking-[-0.01em] leading-[60px] font-extrabold">
               Numbers with Purpose: Building Your Path to Prosperity.
-            </h1>
-            <h3 className="m-0 w-[768px] h-[90px] relative text-xl leading-[150%] font-normal font-[inherit] text-gray-500 inline-block max-w-full mq450:text-base mq450:leading-[24px]">
+            </div>
+            <div className="w-[768px] relative text-xl leading-[150%] text-gray-500 inline-block">
               Our approach goes beyond just managing your finances; we give
               numbers purpose by using them to build a clear and prosperous path
               for your business’s future.
-            </h3>
+            </div>
           </div>
-          <div className="hidden flex-row items-start justify-start gap-boundvariablesdata2 max-w-full mq450:flex-wrap">
+          <div className="hidden flex-row items-start justify-start gap-boundvariablesdata4">
             <Button
               showRightIcon
               showLeftIcon={false}
@@ -30,12 +34,14 @@ const Hero = ({ className = "" }) => {
               propBorder="unset"
               propWidth="unset"
               propBorderRadius="8px"
-              propHeight="52px"
-              cartPlus="pending_I34:689;3368:20321;26:141394"
+              propHeight="unset"
+              cartPlus="/arrowright1.svg"
               propTextTransform="unset"
               propColor="#fff"
-              propAlignSelf="stretch"
-              cartPlus1="pending_I34:689;3368:20321;26:141344"
+              propAlignSelf="unset"
+              cartPlus1="/arrowright.svg"
+              buttonFlex="unset"
+              buttonAlignSelf="unset"
             />
             <Button
               showRightIcon={false}
@@ -43,27 +49,25 @@ const Hero = ({ className = "" }) => {
               buttonText="Watch video"
               showButtonText
               propBackgroundColor="#fff"
-              propPadding="14px 23px"
+              propPadding="14px 24px"
               propOverflow="unset"
               propBorder="1px solid #e5e7eb"
               propWidth="unset"
               propBorderRadius="8px"
-              propHeight="52px"
-              cartPlus="pending_I34:689;3368:20322;29:127794"
+              propHeight="unset"
+              cartPlus="/videocamera.svg"
               propTextTransform="unset"
               propColor="#111928"
-              propAlignSelf="stretch"
-              cartPlus1="pending_I34:689;3368:20322;29:127796"
+              propAlignSelf="unset"
+              cartPlus1="/cartplus3.svg"
+              buttonFlex="unset"
+              buttonAlignSelf="unset"
             />
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-Hero.propTypes = {
-  className: PropTypes.string,
 };
 
 export default Hero;

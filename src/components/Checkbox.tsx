@@ -1,6 +1,13 @@
-import PropTypes from "prop-types";
+import { FunctionComponent } from "react";
 
-const Checkbox = ({
+export type CheckboxType = {
+  className?: string;
+  helperText?: string;
+  showHelper?: boolean;
+  showLabel?: boolean;
+};
+
+const Checkbox: FunctionComponent<CheckboxType> = ({
   className = "",
   helperText = "Some helper text here",
   showHelper = false,
@@ -8,19 +15,19 @@ const Checkbox = ({
 }) => {
   return (
     <div
-      className={`rounded flex flex-row items-center justify-start gap-boundvariablesdata5 max-w-full text-left text-xs text-gray-500 font-leading-none-text-sm-font-medium ${className}`}
+      className={`rounded flex flex-row items-center justify-start gap-boundvariablesdata7 text-left text-xs text-gray-500 font-text-xl-font-normal ${className}`}
     >
-      <div className="h-[16.5px] w-[16.5px] rounded bg-gray-50 border-gray-300 border-[0.5px] border-solid box-border" />
+      <div className="w-boundvariablesdata4 rounded bg-gray-50 border-gray-300 border-[0.5px] border-solid box-border h-boundvariablesdata4" />
       {showLabel && (
-        <div className="flex flex-col items-start justify-start gap-boundvariablesdata10 max-w-[calc(100%_-_24px)]">
+        <div className="flex flex-col items-start justify-start gap-boundvariablesdata20">
           <div className="relative leading-[150%]">
             <span>{`By submitting this form, you confirm that you have read and agree to `}</span>
             <span className="[text-decoration:underline] text-black">
-              <b className="font-leading-none-text-sm-font-medium">
+              <b className="font-text-xl-font-normal">
                 <span className="text-gray1-100">Dinesh CPA</span>
               </b>
               <span>
-                <b className="font-leading-none-text-sm-font-medium">{` `}</b>
+                <b className="font-text-xl-font-normal">{` `}</b>
                 <span className="font-medium">Terms of Service</span>
               </span>
             </span>
@@ -38,13 +45,6 @@ const Checkbox = ({
       )}
     </div>
   );
-};
-
-Checkbox.propTypes = {
-  className: PropTypes.string,
-  helperText: PropTypes.string,
-  showHelper: PropTypes.bool,
-  showLabel: PropTypes.bool,
 };
 
 export default Checkbox;

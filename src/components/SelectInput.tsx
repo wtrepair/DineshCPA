@@ -1,6 +1,15 @@
-import PropTypes from "prop-types";
+import { FunctionComponent } from "react";
 
-const SelectInput = ({
+export type SelectInputType = {
+  className?: string;
+  labelText?: string;
+  showLabel?: boolean;
+  showLabelIcon?: boolean;
+  placeholderText?: string;
+  showPlaceholder?: boolean;
+};
+
+const SelectInput: FunctionComponent<SelectInputType> = ({
   className = "",
   labelText = "Select language",
   showLabel = true,
@@ -10,45 +19,36 @@ const SelectInput = ({
 }) => {
   return (
     <div
-      className={`flex-1 flex flex-col items-start justify-start gap-boundvariablesdata5 min-w-[239px] max-w-full text-left text-sm text-gray-900 font-leading-none-text-sm-font-medium ${className}`}
+      className={`flex-1 flex flex-col items-start justify-start gap-boundvariablesdata7 text-left text-sm text-gray-900 font-text-xl-font-normal ${className}`}
     >
       {showLabel && (
-        <div className="self-stretch flex flex-row items-center justify-start py-0 pl-0 pr-[239px] gap-boundvariablesdata5 mq450:pr-5 mq450:box-border">
+        <div className="self-stretch flex flex-row items-center justify-start gap-boundvariablesdata7">
           <div className="relative leading-[150%] font-medium">{labelText}</div>
           {showLabelIcon && (
             <img
-              className="h-boundvariablesdata w-boundvariablesdata relative overflow-hidden shrink-0"
+              className="w-boundvariablesdata11 relative h-boundvariablesdata11 overflow-hidden shrink-0"
               alt=""
               src="/info.svg"
             />
           )}
         </div>
       )}
-      <div className="self-stretch rounded-lg bg-gray-50 border-gray-300 border-[1px] border-solid box-border flex flex-col items-start justify-start py-2.5 px-[11px] max-w-full text-gray-500">
-        <div className="self-stretch flex flex-row items-center justify-start max-w-full">
+      <div className="self-stretch rounded-lg bg-gray-50 border-gray-300 border-[1px] border-solid flex flex-col items-start justify-start p-boundvariablesdata11 text-gray-500">
+        <div className="self-stretch flex flex-row items-center justify-start">
           {showPlaceholder && (
-            <div className="flex-1 relative leading-[125%] inline-block max-w-[calc(100%_-_10px)]">
+            <div className="self-stretch flex-1 relative leading-[125%] flex items-center">
               {placeholderText}
             </div>
           )}
           <img
-            className="h-boundvariablesdata6 w-boundvariablesdata6 relative overflow-hidden shrink-0"
+            className="w-boundvariablesdata1 relative h-boundvariablesdata1 overflow-hidden shrink-0"
             alt=""
-            src="/chevrondown.svg"
+            src="/chevrondown1.svg"
           />
         </div>
       </div>
     </div>
   );
-};
-
-SelectInput.propTypes = {
-  className: PropTypes.string,
-  labelText: PropTypes.string,
-  showLabel: PropTypes.bool,
-  showLabelIcon: PropTypes.bool,
-  placeholderText: PropTypes.string,
-  showPlaceholder: PropTypes.bool,
 };
 
 export default SelectInput;

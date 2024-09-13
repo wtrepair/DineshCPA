@@ -1,8 +1,25 @@
-import { useMemo } from "react";
+import { FunctionComponent, useMemo, type CSSProperties } from "react";
 import Badge from "./Badge";
-import PropTypes from "prop-types";
 
-const BlogCard = ({
+export type BlogCardType = {
+  className?: string;
+  cardHeader?: string;
+  title?: string;
+  preview?: string;
+  small?: string;
+  badgeText?: string;
+  showText?: boolean;
+  showIcon?: boolean;
+  showCloseIcon?: boolean;
+
+  /** Style props */
+  propPadding?: CSSProperties["padding"];
+  propHeight?: CSSProperties["height"];
+  cardBodyFlex?: CSSProperties["flex"];
+  contentFlex?: CSSProperties["flex"];
+};
+
+const BlogCard: FunctionComponent<BlogCardType> = ({
   className = "",
   cardHeader,
   propPadding,
@@ -10,39 +27,49 @@ const BlogCard = ({
   propHeight,
   preview,
   small,
-  clock,
   badgeText,
-  x,
   showText,
   showIcon,
   showCloseIcon,
+  cardBodyFlex,
+  contentFlex,
 }) => {
-  const contentStyle = useMemo(() => {
+  const contentStyle: CSSProperties = useMemo(() => {
     return {
       padding: propPadding,
+      flex: contentFlex,
     };
-  }, [propPadding]);
+  }, [propPadding, contentFlex]);
 
-  const titleStyle = useMemo(() => {
+  const titleStyle: CSSProperties = useMemo(() => {
     return {
       height: propHeight,
     };
   }, [propHeight]);
 
+  const cardBodyStyle: CSSProperties = useMemo(() => {
+    return {
+      flex: cardBodyFlex,
+    };
+  }, [cardBodyFlex]);
+
   return (
     <div
-      className={`flex-1 shadow-[0px_4px_6px_-1px_rgba(0,_0,_0,_0.1),_0px_2px_4px_-2px_rgba(0,_0,_0,_0.05)] rounded-lg bg-white overflow-hidden flex flex-col items-start justify-start gap-boundvariablesdata2 min-w-[433px] max-w-full text-left text-5xl text-gray-900 font-leading-none-text-sm-font-medium mq450:min-w-full mq825:w-[calc(100%_-_40px)] ${className}`}
+      className={`flex-1 shadow-[0px_4px_6px_-1px_rgba(0,_0,_0,_0.1),_0px_2px_4px_-2px_rgba(0,_0,_0,_0.05)] rounded-lg bg-white h-[510px] overflow-hidden flex flex-col items-start justify-start gap-boundvariablesdata4 text-left text-5xl text-gray-900 font-text-xl-font-normal ${className}`}
     >
-      <div className="self-stretch h-[216px] flex flex-col items-start justify-start pt-boundvariablesdata9 px-boundvariablesdata9 pb-0 box-border">
+      <div className="self-stretch flex flex-col items-start justify-start pt-boundvariablesdata10 px-boundvariablesdata10 pb-0">
         <img
-          className="self-stretch flex-1 rounded-lg max-w-full overflow-hidden max-h-full object-cover"
+          className="self-stretch rounded-lg max-w-full overflow-hidden h-48 shrink-0 object-cover"
           alt=""
           src={cardHeader}
         />
       </div>
-      <div className="self-stretch flex flex-col items-start justify-start p-boundvariablesdata9">
+      <div
+        className="self-stretch flex-1 flex flex-col items-start justify-start p-boundvariablesdata10"
+        style={cardBodyStyle}
+      >
         <div
-          className="self-stretch flex flex-col items-start justify-end pt-[30px] px-0 pb-0 gap-boundvariablesdata"
+          className="self-stretch flex-1 flex flex-col items-start justify-end gap-boundvariablesdata11"
           style={contentStyle}
         >
           <Badge
@@ -50,23 +77,21 @@ const BlogCard = ({
             badgeText={badgeText}
             showIcon={showIcon}
             showCloseIcon={showCloseIcon}
-            clock={clock}
-            x={x}
           />
-          <div className="self-stretch flex flex-col items-start justify-start gap-boundvariablesdata6">
-            <h2
-              className="m-0 self-stretch h-[60px] relative text-inherit leading-[125%] font-bold font-[inherit] inline-block mq450:text-lgi mq450:leading-[24px]"
+          <div className="self-stretch flex flex-col items-start justify-start gap-boundvariablesdata1">
+            <b
+              className="self-stretch relative leading-[125%]"
               style={titleStyle}
             >
               {title}
-            </h2>
+            </b>
             <div className="self-stretch relative text-base leading-[150%] text-gray-500">
               {preview}
             </div>
           </div>
-          <div className="flex flex-row items-end justify-center gap-boundvariablesdata text-sm">
+          <div className="flex flex-row items-end justify-center gap-boundvariablesdata11 text-sm">
             <img
-              className="h-8 w-8 relative rounded-81xl object-cover"
+              className="w-8 relative rounded-81xl h-8 object-cover"
               alt=""
               src="/avatar@2x.png"
             />
@@ -74,7 +99,7 @@ const BlogCard = ({
               <div className="relative leading-[125%] font-medium">
                 Bonnie Green
               </div>
-              <div className="relative leading-[125%] text-gray-500 whitespace-nowrap">
+              <div className="relative leading-[125%] text-gray-500">
                 {small}
               </div>
             </div>
@@ -83,24 +108,6 @@ const BlogCard = ({
       </div>
     </div>
   );
-};
-
-BlogCard.propTypes = {
-  className: PropTypes.string,
-  cardHeader: PropTypes.string,
-  title: PropTypes.string,
-  preview: PropTypes.string,
-  small: PropTypes.string,
-  clock: PropTypes.string,
-  badgeText: PropTypes.string,
-  x: PropTypes.string,
-  showText: PropTypes.bool,
-  showIcon: PropTypes.bool,
-  showCloseIcon: PropTypes.bool,
-
-  /** Style props */
-  propPadding: PropTypes.any,
-  propHeight: PropTypes.any,
 };
 
 export default BlogCard;

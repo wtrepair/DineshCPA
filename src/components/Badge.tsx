@@ -1,23 +1,29 @@
-import PropTypes from "prop-types";
+import { FunctionComponent } from "react";
 
-const Badge = ({
+export type BadgeType = {
+  className?: string;
+  showText?: boolean;
+  badgeText?: string;
+  showIcon?: boolean;
+  showCloseIcon?: boolean;
+};
+
+const Badge: FunctionComponent<BadgeType> = ({
   className = "",
   showText = true,
   badgeText = "Tutorial",
   showIcon = false,
   showCloseIcon = false,
-  clock,
-  x,
 }) => {
   return (
     <div
-      className={`rounded-rounded-md bg-indigo-100 flex flex-row items-center justify-center py-boundvariablesdata10 px-[9px] gap-boundvariablesdata11 text-center text-xs text-indigo-800 font-leading-none-text-sm-font-medium ${className}`}
+      className={`rounded-rounded-md bg-indigo-100 flex flex-row items-center justify-center py-boundvariablesdata20 px-boundvariablesdata1 gap-boundvariablesdata21 text-center text-xs text-indigo-800 font-text-xl-font-normal ${className}`}
     >
       {showIcon && (
         <img
-          className="h-boundvariablesdata6 w-boundvariablesdata6 relative overflow-hidden shrink-0"
+          className="w-boundvariablesdata1 relative h-boundvariablesdata1 overflow-hidden shrink-0 hidden"
           alt=""
-          src={clock}
+          src="/clock.svg"
         />
       )}
       {showText && (
@@ -25,23 +31,13 @@ const Badge = ({
       )}
       {showCloseIcon && (
         <img
-          className="h-boundvariablesdata5 w-boundvariablesdata5 relative overflow-hidden shrink-0"
+          className="w-boundvariablesdata7 relative h-boundvariablesdata7 overflow-hidden shrink-0 hidden"
           alt=""
-          src={x}
+          src="/x1.svg"
         />
       )}
     </div>
   );
-};
-
-Badge.propTypes = {
-  className: PropTypes.string,
-  showText: PropTypes.bool,
-  badgeText: PropTypes.string,
-  showIcon: PropTypes.bool,
-  showCloseIcon: PropTypes.bool,
-  clock: PropTypes.string,
-  x: PropTypes.string,
 };
 
 export default Badge;

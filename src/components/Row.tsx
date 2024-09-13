@@ -1,15 +1,41 @@
-import { useMemo } from "react";
+import { FunctionComponent, useMemo, type CSSProperties } from "react";
 import Button from "./Button";
-import PropTypes from "prop-types";
 
-const Row = ({
+export type RowType = {
+  className?: string;
+  heading?: string;
+  supportingText?: string;
+  collageFinanceBannerConcept?: string;
+  cartPlus?: string;
+  buttonText?: string;
+  cartPlus1?: string;
+  showRightIcon?: boolean;
+  showLeftIcon?: boolean;
+  showButtonText?: boolean;
+  propBackgroundColor?: string;
+  propPadding2?: string;
+  propOverflow?: string;
+  propBorder?: string;
+  propWidth?: string;
+  propBorderRadius?: string;
+  propHeight?: string;
+  propTextTransform?: string;
+  propColor?: string;
+  propAlignSelf?: string;
+  buttonFlex?: string;
+  buttonAlignSelf?: string;
+
+  /** Style props */
+  propPadding?: CSSProperties["padding"];
+  propPadding1?: CSSProperties["padding"];
+};
+
+const Row: FunctionComponent<RowType> = ({
   className = "",
   propPadding,
   heading,
   supportingText,
   propPadding1,
-  arrowNarrowRight1,
-  arrowNarrowRight2,
   collageFinanceBannerConcept,
   cartPlus,
   buttonText,
@@ -27,14 +53,16 @@ const Row = ({
   propTextTransform,
   propColor,
   propAlignSelf,
+  buttonFlex,
+  buttonAlignSelf,
 }) => {
-  const rightContentStyle = useMemo(() => {
+  const rightContentStyle: CSSProperties = useMemo(() => {
     return {
       padding: propPadding,
     };
   }, [propPadding]);
 
-  const buttonsStyle = useMemo(() => {
+  const buttonsStyle: CSSProperties = useMemo(() => {
     return {
       padding: propPadding1,
     };
@@ -42,20 +70,20 @@ const Row = ({
 
   return (
     <div
-      className={`self-stretch flex flex-row items-center justify-start py-0 pl-0 pr-0.5 box-border gap-boundvariablesdata17 max-w-full text-left text-17xl text-gray-900 font-leading-none-text-sm-font-medium lg:flex-wrap mq450:gap-boundvariablesdata17 mq825:gap-boundvariablesdata17 ${className}`}
+      className={`w-[1280px] flex flex-row items-center justify-start gap-boundvariablesdata13 text-left text-17xl text-gray-900 font-text-xl-font-normal ${className}`}
     >
       <div
-        className="flex-1 flex flex-col items-start justify-start gap-boundvariablesdata18 min-w-[416px] max-w-full mq825:min-w-full"
+        className="w-[640px] flex flex-col items-start justify-start gap-boundvariablesdata14"
         style={rightContentStyle}
       >
-        <h1 className="m-0 self-stretch relative text-inherit tracking-[-0.01em] leading-[125%] font-extrabold font-[inherit] mq450:text-3xl mq450:leading-[27px] mq825:text-10xl mq825:leading-[36px]">
+        <div className="self-stretch relative tracking-[-0.01em] leading-[125%] font-extrabold">
           {heading}
-        </h1>
+        </div>
         <div className="self-stretch relative text-lg leading-[150%] text-gray-500">
           {supportingText}
         </div>
         <div
-          className="flex flex-row items-center justify-start py-0 pl-0 pr-5 gap-boundvariablesdata19 text-sm"
+          className="flex flex-row items-center justify-start gap-boundvariablesdata15 text-sm"
           style={buttonsStyle}
         >
           <Button
@@ -75,61 +103,31 @@ const Row = ({
             propColor={propColor}
             propAlignSelf={propAlignSelf}
             cartPlus1={cartPlus1}
+            buttonFlex={buttonFlex}
+            buttonAlignSelf={buttonAlignSelf}
           />
-          <div className="self-stretch rounded-rounded-lg1 bg-white border-gray-200 border-[1px] border-solid hidden flex-row items-center justify-center py-boundvariablesdata21 px-[19px] gap-boundvariablesdata20">
+          <div className="rounded-rounded-lg1 bg-white border-gray-200 border-[1px] border-solid hidden flex-row items-center justify-center py-boundvariablesdata17 px-boundvariablesdata18 gap-boundvariablesdata16">
             <img
-              className="h-3.5 w-3.5 relative overflow-hidden shrink-0 hidden"
+              className="w-3.5 relative h-3.5 overflow-hidden shrink-0 hidden"
               alt=""
-              src={arrowNarrowRight1}
+              src="/arrownarrowright1.svg"
             />
-            <div className="self-stretch relative leading-[150%] font-medium">
-              Read more
-            </div>
+            <div className="relative leading-[150%] font-medium">Read more</div>
             <img
-              className="h-3.5 w-3.5 relative overflow-hidden shrink-0 hidden"
+              className="w-3.5 relative h-3.5 overflow-hidden shrink-0 hidden"
               alt=""
-              src={arrowNarrowRight2}
+              src="/arrownarrowright1.svg"
             />
           </div>
         </div>
       </div>
       <img
-        className="w-[558px] relative max-h-full object-cover max-w-full lg:flex-1"
-        loading="lazy"
+        className="w-[558px] relative h-[360px] object-cover"
         alt=""
         src={collageFinanceBannerConcept}
       />
     </div>
   );
-};
-
-Row.propTypes = {
-  className: PropTypes.string,
-  heading: PropTypes.string,
-  supportingText: PropTypes.string,
-  arrowNarrowRight1: PropTypes.string,
-  arrowNarrowRight2: PropTypes.string,
-  collageFinanceBannerConcept: PropTypes.string,
-  cartPlus: PropTypes.string,
-  buttonText: PropTypes.string,
-  cartPlus1: PropTypes.string,
-  showRightIcon: PropTypes.bool,
-  showLeftIcon: PropTypes.bool,
-  showButtonText: PropTypes.bool,
-  propBackgroundColor: PropTypes.string,
-  propPadding2: PropTypes.string,
-  propOverflow: PropTypes.string,
-  propBorder: PropTypes.string,
-  propWidth: PropTypes.string,
-  propBorderRadius: PropTypes.string,
-  propHeight: PropTypes.string,
-  propTextTransform: PropTypes.string,
-  propColor: PropTypes.string,
-  propAlignSelf: PropTypes.string,
-
-  /** Style props */
-  propPadding: PropTypes.any,
-  propPadding1: PropTypes.any,
 };
 
 export default Row;
